@@ -1,0 +1,33 @@
+{
+  "name": "khidmatik",
+  "version": "1.0.0",
+  "description": "this work is made by 0day team",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0eroday/khidmatik.git"
+  },
+  "author": "0day",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0eroday/khidmatik/issues"
+  },
+  "homepage": "https://github.com/0eroday/khidmatik#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.1.0",
+    "express": "^4.17.1",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.1"
+  }
+}
