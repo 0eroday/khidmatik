@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const DBkey = require("./middleware/keys.json");
-console.log(DBkey.mongoURI);
 const db = DBkey.mongoURI;
 
 const connectDB = async () => {
