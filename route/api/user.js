@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const {check , validationResult} = require('express-validator/check');
 const User = require('../../db-models/User');
+const keys = require('../../config/middleware/keys.json');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 
 
@@ -42,9 +44,19 @@ router.post('/',
       user.password = await bcrypt.hash(password, sult);
       await user.save();
 
-      res.send('user is on bro')
+      const payload = {
+        id: user.id
+      }
+
+      jwt.sign(
+        payload,
+        keys.jwtToken,
+        {expiresIn: 80000},
+        (err, token)=>{
+          if(err) throw err;
+          res.json({token});
+        });
     }catch(err){
-      console.log(err.message);
       res.status(500).send('Server error');
     }
   });

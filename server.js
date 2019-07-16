@@ -8,6 +8,7 @@ require('./config/middleware/middleware')(app, express);
 
 DBconnection()
 // app.get('/', (req, res) => res.send('Hello World!'))
+app.use('/api/auth', require('./route/api/auth'));
 app.use('/api/users', require('./route/api/user'));
 
 app.listen(PORT,()=>{console.log("server now runing on port " +`${PORT}`);
